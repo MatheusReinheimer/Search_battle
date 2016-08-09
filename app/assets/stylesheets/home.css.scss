@@ -1,0 +1,30 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400);
+
+body{
+  margin-top: 0px;
+  padding: 0px;
+}
+
+.navbar{
+  h3{
+    font-size: 150%;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding: 5px;
+  }
+}
+.searchbar{
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+}
+
+.container{
+  height: 100%;
+  width: 75%;
+  margin: auto;
+  padding: 10px;
+}
