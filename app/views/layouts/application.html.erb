@@ -20,30 +20,8 @@
       </div><!-- /input-group -->
     </div><!-- /searchbattle -->
   </nav><!-- /top -->
-
-  <div class="container" id="result">
-    <div  class="row">
-      <div class="col-md-6">
-        <div class="panel panel-default google">
-          <div class="panel-heading">Google</div>
-          <div class="panel-body">
-            Searchs
-          </div>
-        </div><!-- /panel panel-defaut bing -->
-      </div><!-- /col-md-6 -->
-
-      <div class="col-md-6">
-        <div class= "panel panel-default bing">
-          <div class="panel-heading">Bing</div>
-          <div class="panel-body">
-            Searchs
-          </div>
-        </div><!-- /panel panel-defaut bing -->
-      </div><!-- /col-md-6 -->
-
-    </div><!-- row -->
-
-  </div><!-- /container -->
+  <div id="result"></div>
+  <%= yield %>
 
   <script type="text/javascript">
     $( "#search_button" ).click(function() {
@@ -56,17 +34,14 @@
         data: {
           param: value
         },
-        success: function(data, jqXHR){
-          $("#result").html(jqXHR.responseText)
-          // alert(data.result);
+        success: function(data){
+          $("#result").html(data);
         },
         error: function(jqXHR,  errorThrown){
-          // $("#result").html("Erro ! Expressão ou restrições com valores errados.");
         }
       });
     });
   </script>
-  <%= yield %>
 
 </body>
 </html>

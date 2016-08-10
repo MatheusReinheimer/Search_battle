@@ -28,7 +28,7 @@ module Scrapers
         result_hash = {
           name:        parse_class.css('.r a').map(&:text)[0],
           dns:         parse_class.css('.s cite').map(&:text).map(&:strip)[0],
-          description: parse_class.css('.s span').map(&:text).last.gsub(/\n|\.\.\./,"").strip
+          description: parse_class.css('.s span').map(&:text).last
         }
         results_array << result_hash
       end

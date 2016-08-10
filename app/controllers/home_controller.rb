@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  respond_to :json
+  respond_to :json, :html
 
   def index
   end
@@ -9,11 +9,13 @@ class HomeController < ApplicationController
     @bing_ac = Scrapers::BingScraper.new.run(params[:param])
     @gg_ac = Scrapers::GoogleScraper.new.run(params[:param])
 
-    arr = [
+    @arr = [
       { google: @gg_ac },
       { bing: @bing_ac }
     ]
 
-    render json: { result: arr }
+    # render json: { result: arr }
+
+   render layout: false, :result => @arr
   end
 end
